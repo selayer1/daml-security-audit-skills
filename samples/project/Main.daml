@@ -1,0 +1,12 @@
+module Main where
+
+-- Synthetic review fixture; not SDK-compiled in the kit tests.
+template Coupon
+  with
+    owner : Party
+    amount : Decimal
+  where
+    signatory owner
+    nonconsuming choice Claim : ContractId Coupon
+      controller owner
+      do create this

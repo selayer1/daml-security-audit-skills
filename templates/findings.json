@@ -1,0 +1,16 @@
+[
+  {
+    "id": "review-001",
+    "candidate_ids": [],
+    "title": "Replace with a source-backed review conclusion",
+    "status": "UNCERTAIN",
+    "severity": "unknown",
+    "file": "daml/Main.daml",
+    "line": 1,
+    "evidence": "Replace with an exact single-line source excerpt",
+    "reasoning": "State the path and the business invariant; do not assert exploitation from a signal alone.",
+    "refutation": "Describe guards and authorization checked, and what remains unresolved.",
+    "impact": "State demonstrated impact, or the missing facts needed to establish impact.",
+    "validation": "Source inspection only; no Daml test or ledger submission was executed."
+  }
+]

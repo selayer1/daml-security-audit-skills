@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.parser-venv/
+*.so
+*.dylib
+*.dll
+audit-output/

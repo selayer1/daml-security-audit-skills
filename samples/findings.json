@@ -1,0 +1,18 @@
+[
+  {
+    "id": "example-001",
+    "candidate_ids": [
+      "baa895c1b9666b89"
+    ],
+    "title": "Repeatable coupon creation requires a business-value check",
+    "status": "UNCERTAIN",
+    "severity": "unknown",
+    "file": "Main.daml",
+    "line": 10,
+    "evidence": "nonconsuming choice Claim : ContractId Coupon",
+    "reasoning": "The synthetic choice creates another Coupon while leaving its parent active. The file alone does not establish that these coupons can be redeemed against another party.",
+    "refutation": "Determine whether any downstream redemption requires a unique consumed entitlement or permits arbitrary owner-created coupons. No downstream implementation is supplied.",
+    "impact": "Potential duplicated entitlement only if a downstream system assigns scarce value without an independent guard; this is not established here.",
+    "validation": "Source inspection of synthetic fixture only; no SDK build, Daml Script test or ledger submission executed."
+  }
+]

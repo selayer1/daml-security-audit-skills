@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Daml/Canton review records",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "title",
+      "file",
+      "evidence",
+      "reasoning",
+      "refutation",
+      "impact",
+      "validation",
+      "status",
+      "severity",
+      "candidate_ids",
+      "line"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "title": {
+        "type": "string",
+        "minLength": 1
+      },
+      "file": {
+        "type": "string",
+        "minLength": 1
+      },
+      "evidence": {
+        "type": "string",
+        "minLength": 1
+      },
+      "reasoning": {
+        "type": "string",
+        "minLength": 1
+      },
+      "refutation": {
+        "type": "string",
+        "minLength": 1
+      },
+      "impact": {
+        "type": "string",
+        "minLength": 1
+      },
+      "validation": {
+        "type": "string",
+        "minLength": 1
+      },
+      "status": {
+        "enum": [
+          "CONFIRMED",
+          "FALSE_POSITIVE",
+          "UNCERTAIN"
+        ]
+      },
+      "severity": {
+        "enum": [
+          "critical",
+          "high",
+          "medium",
+          "low",
+          "info",
+          "unknown"
+        ]
+      },
+      "candidate_ids": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "uniqueItems": true
+      },
+      "line": {
+        "type": "integer",
+        "minimum": 1
+      }
+    }
+  }
+}

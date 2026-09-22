@@ -1,0 +1,46 @@
+================================================================================
+module header
+================================================================================
+
+module Foo.Bar where
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (module_header (module_name)))
+
+================================================================================
+simple template with signatory + choice
+================================================================================
+
+module M where
+
+template T
+  with
+    p : Party
+    q : Decimal
+  where
+    signatory p
+    observer p
+
+    choice T_Do : Text
+      controller p
+      do pure "ok"
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (module_header (module_name))
+  (template_decl
+    (constructor)
+    (template_with_block
+      (_record_field_line (identifier) (_type_body (constructor)))
+      (_record_field_line (identifier) (_type_body (constructor))))
+    (template_body
+      (signatory_clause (expr_blob (identifier)))
+      (observer_clause (expr_blob (identifier)))
+      (choice_decl
+        (constructor)
+        (_type_body (constructor))
+        (expr_line (identifier))
+        (do_block (identifier) (string_literal))))))
